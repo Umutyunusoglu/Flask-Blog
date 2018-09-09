@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block body %}
+    <h3>Makaleler</h3>
+    <hr>
+    
+    {% if makaleler %}
+    <form action="/search" method="post">
+    <input type="text" name="keyword" class="input-sm" maxlength="64" placeholder="Ara..."/>
+        <button type="submit" class="btn btn-danger">Ara</button>
+    </form>
+    <p></p>
+        {% for makale in makaleler  %}
+            <ul class="list-group">
+                <li class="list-group-item"><a href="makaleler/{{makale.id}}">{{makale.title}}</a></li>
+            </ul>
+        {% endfor %} 
+    {% else %}
+        <div class="alert-danger">Bu Blog'da Henüz Makale Bulunmuyor</div>
+
+    {% endif %}
+{% endblock body %}

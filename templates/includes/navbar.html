@@ -1,0 +1,49 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-dark">
+        <a class="navbar-brand" href="/"><font color="white"><b>Blog</b></font></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+      
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="/hakkımızda"><font color="white">Hakkımızda</font></a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="/makaleler"><font color="white">Makaleler</font></a>
+                </li>
+                    
+        </ul>
+
+        <ul class="navbar-nav ml-auto">
+
+            {% if session["logged_in"] %}
+
+
+                <li class="nav-item active">
+                    <a class="nav-link" href="/kontrol"><font color="white">Kontrol Paneli</font></a>
+                </li>
+            
+                <li class="nav-item active">
+                    <a class="nav-link" href="/çıkış"><font color="white">Çıkış Yap</font></a>
+                </li>
+            
+            {% else %}
+                <li class="nav-item active">
+                        <a class="nav-link" href="/giriş"><font color="white">Giriş Yap</font></a>
+                </li>
+                <li class="nav-item active">
+                        <a class="nav-link" href="/kayıt"><font color="white">Kayıt Ol</font></a>
+                </li>
+                    
+
+
+            {% endif %}
+            
+                
+        </ul>
+
+        
+    </div>
+ </nav>
